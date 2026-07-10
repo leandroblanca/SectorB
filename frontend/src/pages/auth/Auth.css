@@ -109,9 +109,9 @@ button:hover{
     margin-top: 25px;
 }
 
-.login-container span{
+.login-link{
     color: var(--primary);
     cursor: pointer;
     font-weight: bold;
-    
+    padding: 3px;
 }
