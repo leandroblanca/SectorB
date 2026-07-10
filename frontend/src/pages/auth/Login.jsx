@@ -25,7 +25,7 @@ function Login() {
                         Entrar
                     </button>
                 </form>
-                <p>No tengo una cuenta<Link to="/register">Registrate</Link></p>
+                <p>No tengo una cuenta<Link to="/register" className="login-link">Registrate</Link></p>
             </div>
         </main>
     );
