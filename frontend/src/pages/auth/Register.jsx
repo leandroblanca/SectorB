@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../auth/Auth.css"
 function Register(params) {
     return (
@@ -38,7 +39,7 @@ function Register(params) {
                                 Register
                             </button>
                         </form>
-                        <p>Ya tengo una cuenta?<Link to="/login">Login</Link></p>
+                        <p>Ya tengo una cuenta?<Link to="/login" className="login-link">Login</Link></p>
                     </div>
                 </main>
     )
