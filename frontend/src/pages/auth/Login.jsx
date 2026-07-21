@@ -18,22 +18,23 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("se ejecuto el handleSub")
         try {
             const response = await axios.post("http://localhost:3000/api/auth/login",
                 formData
             )
             localStorage.setItem("token", response.data.token)
-            localStorage.setItem("user",JSON.stringify(response.data.user))
-            console.log(response.data)
+            localStorage.setItem("user", JSON.stringify(response.data.user))
 
         } catch (error) {
-            console.error(error.response?.data || error.message)
+            console.error(error.response.data)
+            
         }
 
         if (response.data.user.role === "admin") {
             navigate("/admin")
-        }else{
-            navigate("/cliente")
+        } else {
+            navigate("cliente")
         }
     }
     return (
