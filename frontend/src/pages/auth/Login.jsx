@@ -1,7 +1,41 @@
 import "../auth/Auth.css";
-import {Link} from "react-router-dom"
+import { useState } from "react";
+import {Link, useNavigate} from "react-router-dom"
+import axios from "axios"
 
 function Login() {
+    const navigate = useNavigate()
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+    })
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:3000/api/auth/login",
+                formData
+            )
+            localStorage.setItem("token", response.data.token)
+            localStorage.setItem("user",JSON.stringify(response.data.user))
+            console.log(response.data)
+
+        } catch (error) {
+            console.error(error.response?.data || error.message)
+        }
+
+        if (response.data.user.role === "admin") {
+            navigate("/admin")
+        }else{
+            navigate("/cliente")
+        }
+    }
     return (
         <main className="login-page">
             <div className="login-container">
@@ -10,16 +44,22 @@ function Login() {
 
                 <p>Introduce tu gmail y contraseña para entrar</p>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label> Email </label>
-                        <input type="text"
-                        placeholder="leoblank@gmail.com" />
+                        <input type="email"
+                        name="email"
+                        placeholder="leoblank@gmail.com"
+                        value={formData.email}
+                        onChange={handleChange} />
                     </div>
                     <div>
                         <label>Contraseña</label>
                         <input type="password"
-                         placeholder="*******" />
+                         name="password"
+                         placeholder="*******"
+                         value={formData.password}
+                         onChange={handleChange} />
                     </div>
                     <button type="submit">
                         Entrar
