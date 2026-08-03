@@ -1,3 +1,4 @@
+import Footer from "../components/footer/Footer";
 import Hero from "../components/hero/Hero";
 import NavBar from "../components/layout/Navbar";
 import Offer from "../components/offer/Offer";
@@ -12,6 +13,7 @@ function Home(params) {
         <Services/>
         <Offer/>
         <Testimonials/>
+        <Footer/>
         </>
     )
 }
