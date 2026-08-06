@@ -1,16 +1,15 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css"
 import { useState } from "react";
+import useAuthStore from "../store/authStore";
 
 function NavBar() {
     const navigate = useNavigate()
-    
-    const user= JSON.parse(localStorage.getItem("user"))
+    const logout = useAuthStore((state) => state.logout)
+    const user = useAuthStore((state) => state.user)
     const [showMenu, setShowMenu] = useState(false)
-    const logout = () => {
-        localStorage.removeItem("token")
-        localStorage.removeItem("user")
-
+    const handleLogout = () => {
+        logout()
         navigate("/login");
     }
 
@@ -48,7 +47,7 @@ function NavBar() {
                             <NavLink to="">
                                 Mi Turno
                             </NavLink>
-                            <button onClick={logout}>
+                            <button onClick={handleLogout}>
                                 Cerrar sesion
                             </button>
                         </div>

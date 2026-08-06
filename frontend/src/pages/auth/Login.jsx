@@ -3,10 +3,11 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import useAuthStore from "../../components/store/authStore";
 
 function Login() {
   const navigate = useNavigate();
+  const login = useAuthStore((state) => state.login)
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,8 +26,10 @@ function Login() {
         "http://localhost:3000/api/auth/login",
         formData,
       );
-      localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", JSON.stringify(response.data.user));
+      login(
+        response.data.user,
+        response.data.token
+      )
       toast.success("Bienvenido!")
       if (response.data.user.role === "admin") {
         navigate("/admin");
