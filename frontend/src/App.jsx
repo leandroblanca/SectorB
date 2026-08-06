@@ -6,6 +6,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Home from "./pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 function App() {
   return (
@@ -14,8 +15,13 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/admin" element={
+        <ProtectedRoute allowedRoles={["admin"]}>
+          <AdminDashboard/>
+        </ProtectedRoute>
+      }/>
       <Route path="/home" element={
-        <ProtectedRoute>
+        <ProtectedRoute allowedRoles={["client"]}>
         <Home />
         </ProtectedRoute>
         } />

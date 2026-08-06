@@ -25,6 +25,9 @@ body{
 
     border-bottom: 1px solid var(--input);
 
+    position: relative;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar-logo{
@@ -91,9 +94,12 @@ body{
     box-shadow: 0 10px 30px rgba(0,0,0, .4);
 
     animation: dropdown .25s ease;
+
+    margin-top: 5px;
 }
 
 .dropdown-menu a{
+    margin-top: 10px;
     padding: 15px 20px;
     color: var(--white);
     text-decoration: none;
