@@ -1,0 +1,68 @@
+:root{
+    --background-fondo: #121212;
+    --card-tarjeta: #1E1E1E;
+    --input: #2A2A2A;
+    --primary: #D4AF37;
+    --white: #F5F5F5;
+    --gray: #B3B3B3;
+}
+
+.sidebar{
+    width: 260px;
+    min-height: 100vh;
+    background-color: var(--card-tarjeta);
+    border-right: 1px solid var(--input);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 25px;
+
+}
+
+.sidebar-logo{
+    margin-bottom: 45px;
+}
+
+.sidebar-logo h2{
+    color: var(--primary);
+    font-size: 2rem;
+}
+.sidebar-user{
+    margin-bottom: 40px;
+}
+
+.sidebar-user h3{
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.sidebar-user span{
+    color: var(--gray);
+    font-size: .9rem;
+}
+
+.sidebar-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.sidebar-menu a{
+    text-decoration: none;
+    color: var(--white);
+
+    padding: 14px 18px;
+    border-radius: 10px;
+    transition: .3s1;
+}
+
+.sidebar-menu a:hover{
+    background: rgba(190,242,100,.15);
+    color: var(--primary);
+}
+
+.sidebar-menu .active{
+    background: var(--primary);
+    color: black;
+    font-weight: 600;
+}

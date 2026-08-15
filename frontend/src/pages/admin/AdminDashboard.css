@@ -1,0 +1,26 @@
+:root{
+    --background-fondo: #121212;
+    --card-tarjeta: #1E1E1E;
+    --input: #2A2A2A;
+    --primary: #D4AF37;
+    --white: #F5F5F5;
+    --gray: #B3B3B3;
+}
+
+.admin-layout{
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--background-fondo) ;
+}
+
+.admin-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-main{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 30px 40px;
+}

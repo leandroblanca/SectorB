@@ -1,0 +1,120 @@
+:root{
+    --background-fondo: #121212;
+    --card-tarjeta: #1E1E1E;
+    --input: #2A2A2A;
+    --primary: #D4AF37;
+    --white: #F5F5F5;
+    --gray: #B3B3B3;
+}
+
+.recent-customers{
+    background: var(--card-tarjeta);
+    border:1px solid var(--input);
+    border-radius: 15px;
+    margin: 0 40px 30px;
+    overflow: hidden;
+}
+.recent-customer-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px ;
+    border-bottom: 1px solid var(--input);
+}
+.recent-customer-header h2{
+    color: var(--white);
+    margin: 0;
+    font-size: 1.3rem;
+}
+.filter-button{
+    border: none;
+    background: transparent;
+    color: var(--gray);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+.filter-button:hover{
+    color: var(--primary);
+}
+
+.customers-table-header{
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.3fr 1fr 0.7fr;
+    align-items: center;
+    padding: 15px 25px;
+    background: #252525;
+    color: var(--gray);
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+.customer-row{
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.3fr 1fr 0.7fr;
+    align-items: center;
+    padding: 18px 25px;
+    border-radius: 1px solid var(--input);
+    color: var(--white);
+    font-size: 0.85rem;
+}
+.customer-row:last-child{
+    border-bottom: none;
+}
+.customer-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-weight: 500;
+}
+
+.customer-avatar {
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: var(--input);
+}
+.customer-status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.65rem;
+
+    font-weight: bold;
+}
+
+.status-active {
+    color: #00c896;
+
+    background: rgba(0, 200, 150, 0.12);
+}
+.status-pending {
+    color: var(--primary);
+
+    background: rgba(212, 175, 55, 0.12);
+}
+.customer-action {
+    border: none;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.customer-action:hover {
+    transform: scale(1.2);
+}

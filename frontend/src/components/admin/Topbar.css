@@ -1,0 +1,32 @@
+:root{
+    --background-fondo: #121212;
+    --card-tarjeta: #1E1E1E;
+    --input: #2A2A2A;
+    --primary: #D4AF37;
+    --white: #F5F5F5;
+    --gray: #B3B3B3;
+}
+
+.topbar{
+    height: 90px;
+    background: var(--card-tarjeta);
+
+    border-bottom: 1px solid var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;   
+}
+
+.topbar h1{
+    color: var(--white);
+
+    font-size: 2rem;
+}
+
+.topbar p{
+    color: var(--gray);
+    margin-top: 6px;
+}
