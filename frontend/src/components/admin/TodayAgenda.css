@@ -1,0 +1,109 @@
+:root{
+    --background-fondo: #121212;
+    --card-tarjeta: #1E1E1E;
+    --input: #2A2A2A;
+    --primary: #D4AF37;
+    --white: #F5F5F5;
+    --gray: #B3B3B3;
+}
+.today-agenda{
+    background: var(--card-tarjeta);
+    border: 1px solid var(--input);
+    border-radius: 15px;
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.agenda-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.agenda-header h2{
+    color: var(--white);
+    font-size: 1.4rem;
+    margin: 0;
+}
+.agenda-header button{
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.appointments{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+.appointment{
+    background: #181818;
+    border: 3px solid var(--input);
+    border-radius: 6px;
+    padding: 15px;
+    transition: 0.3s;
+}
+.appointment:hover{
+    border-left-color: var(--primary) ;
+    transform: translateX(3px);
+}
+.appointment-active{
+    border-left-color: var(--primary);
+    background: rgba(212, 175, 55, 0.10);
+}
+.appointment-time {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+.appointment h3 {
+    color: var(--white);
+
+    font-size: 0.95rem;
+
+    margin: 0 0 5px;
+}
+.appointment p {
+    color: var(--gray);
+
+    font-size: 0.8rem;
+
+    margin: 0;
+}
+.new-appointment {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: var(--primary);
+
+    color: #000;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.new-appointment:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
