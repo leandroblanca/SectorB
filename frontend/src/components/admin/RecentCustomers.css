@@ -7,7 +7,7 @@
     --gray: #B3B3B3;
 }
 
-.recent-customers{
+.recent-customer{
     background: var(--card-tarjeta);
     border:1px solid var(--input);
     border-radius: 15px;
@@ -26,18 +26,6 @@
     margin: 0;
     font-size: 1.3rem;
 }
-.filter-button{
-    border: none;
-    background: transparent;
-    color: var(--gray);
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: 0.3s;
-}
-.filter-button:hover{
-    color: var(--primary);
-}
-
 .customers-table-header{
     display: grid;
     grid-template-columns: 2fr 1.5fr 1.3fr 1fr 0.7fr;
@@ -101,7 +89,7 @@
 
     background: rgba(212, 175, 55, 0.12);
 }
-.customer-action {
+.customers-action {
     border: none;
 
     background: transparent;
@@ -115,6 +103,171 @@
     transition: 0.3s;
 }
 
-.customer-action:hover {
+.customers-action:hover {
     transform: scale(1.2);
+}
+.filter-container{
+    position: relative;
+}
+.filter-menu{
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 140px;
+    background: var(--card-tarjeta);
+    border: 1px solid var(--input);
+    border-radius: 8px;
+    padding: 6px;
+    z-index: 10;
+}
+.filter-menu button{
+    background: transparent;
+    border: none;
+
+    color: var(--white);
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.filter-menu button:hover{
+    background: var(--input);
+}
+.edit-modal-overlay{
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+}
+
+.edit-modal{
+    width: 450px;
+    background: var(--card-tarjeta);
+    border: 1px solid var(--input);
+    padding: 25px;
+    box-shadow: 0 20px 50px rgb(0, 0, 0, 0.5);
+}
+
+.edit-modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+.edit-modal-header h2{
+    color: var(--white);
+    margin: 0;
+    font-size: 1.3rem;
+}
+.edit-modal-close{
+    border: none;
+    background: transparent;
+    color: var(--gray);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.edit-modal-close:hover{
+    color: var(--white);
+}
+.edit-form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.edit-form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.edit-form-group label{
+    color: var(--gray);
+
+    font-size: 0.8rem;
+}
+
+.edit-form-group input,
+.edit-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: var(--input);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 11px 12px;
+    color: var(--white);
+    outline: none;
+}
+.edit-form-group input:focus,
+.edit-form-group select:focus {
+    border-color: var(--primary);
+}
+
+.edit-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.edit-cancel-button,
+.edit-save-button {
+    border: none;
+    border-radius: 8px;
+
+    padding: 10px 18px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.edit-cancel-button {
+    background: var(--input);
+    color: var(--gray);
+}
+
+.edit-save-button {
+    background: var(--primary);
+    color: #121212;
+}
+
+.edit-cancel-button:hover {
+    color: var(--white);
+}
+
+.edit-save-button:hover {
+    opacity: 0.85;
+}
+.customer-header-actions{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.add-customer-button{
+    border: none;
+    background: var(--primary);
+    color: #121212;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.add-customer-button:hover{
+    opacity: 0.85;
 }
