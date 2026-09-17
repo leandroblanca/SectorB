@@ -8,7 +8,7 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-function RecentCustomers(params) {
+function RecentCustomers() {
   async function handleStatusChange(id, currentStatus) {
     const newStatus = currentStatus === "active" ? "inactive" : "active";
     try {
