@@ -2,13 +2,14 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
-import Home from "./pages/Home";
-import ProtectedRoute from "./components/ProtectedRoute";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import ServiceAdmin from "./pages/admin-service/AdminService";
-import AdminLayout from "./pages/admin/AdminLayout";
+import Login from "./pages/auth/Login.jsx";
+import Register from "./pages/auth/Register.jsx";
+import Home from "./pages/Home.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import AdminDashboard from "./pages/admin/AdminDashboard.jsx";
+import ServiceAdmin from "./pages/admin-service/AdminService.jsx";
+import AdminLayout from "./pages/admin/AdminLayout.jsx";
+import AppointementsAdmin from "./pages/admin-appointments/Appointments.jsx";
 function App() {
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
         >
         <Route index element={<AdminDashboard />} />
         <Route path="services" element={<ServiceAdmin />} />
+        <Route path="appointments" element={<AppointementsAdmin />} />
         </Route>
 
         <Route
