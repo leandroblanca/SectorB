@@ -6,7 +6,7 @@ import Services from "../components/services/Services";
 import Testimonials from "../components/testimonials/Testimonials";
 import useAuthStore from "../components/store/authStore";
 
-function Home(params) {
+function Home() {
     const user = useAuthStore((state) => state.user)
     console.log(user)
     return (
