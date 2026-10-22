@@ -10,6 +10,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard.jsx";
 import ServiceAdmin from "./pages/admin-service/AdminService.jsx";
 import AdminLayout from "./pages/admin/AdminLayout.jsx";
 import AppointementsAdmin from "./pages/admin-appointments/Appointments.jsx";
+import ClientsAdmin from "./pages/admin-client/ClientAdmin.jsx";
 function App() {
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
         <Route index element={<AdminDashboard />} />
         <Route path="services" element={<ServiceAdmin />} />
         <Route path="appointments" element={<AppointementsAdmin />} />
+        <Route path="clients" element={<ClientsAdmin />} />
         </Route>
 
         <Route
