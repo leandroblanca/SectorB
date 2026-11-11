@@ -11,6 +11,8 @@ import ServiceAdmin from "./pages/admin-service/AdminService.jsx";
 import AdminLayout from "./pages/admin/AdminLayout.jsx";
 import AppointementsAdmin from "./pages/admin-appointments/Appointments.jsx";
 import ClientsAdmin from "./pages/admin-client/ClientAdmin.jsx";
+import ProfileAdmin from "./pages/admin-profile/ProfileAdmin.jsx"
+
 function App() {
   return (
     <>
@@ -30,6 +32,7 @@ function App() {
         <Route path="services" element={<ServiceAdmin />} />
         <Route path="appointments" element={<AppointementsAdmin />} />
         <Route path="clients" element={<ClientsAdmin />} />
+        <Route path="profile" element={<ProfileAdmin />} />
         </Route>
 
         <Route
