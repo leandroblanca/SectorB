@@ -22,13 +22,13 @@ function Sidebar () {
                 <NavLink to="/admin/services">
                     Servicios
                 </NavLink>
-                <NavLink to="/admin/appointmets">
+                <NavLink to="/admin/appointments">
                     Turnos
                 </NavLink>
                 <NavLink to="/admin/clients">
                     Clientes
                 </NavLink>
-                <NavLink to="/admin/perfile">
+                <NavLink to="/admin/profile">
                     Perfil
                 </NavLink>
             </nav>
