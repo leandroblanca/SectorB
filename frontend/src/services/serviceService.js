@@ -2,8 +2,7 @@ import api from "./api";
 
 async function getServices() {
     try {
-        const response = await api.get("/services")
-    
+        const response = await api.get("/services")    
         return response.data.services
         
     } catch (error) {

@@ -33,10 +33,29 @@
 .services-title p{
     color: var(--gray);
 }
-.services-grid{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+.services-grid {
+    display: flex;
+    flex-wrap: nowrap;
     gap: 28px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--card-tarjeta);
+}
+.services-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.services-grid::-webkit-scrollbar-track {
+    background: var(--card-tarjeta);
+    border-radius: 10px;
+}
+
+.services-grid::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
 }
 
 .view-all{

@@ -25,11 +25,15 @@ async function createAppointmets(appointmentData) {
 
     return response.data.appointment;
 }
-
+async function getMyappointments() {
+    const response = await api.get("/appointments/my-appointments")
+    return response.data
+}
 
 export{
     getAppointmets,
     getAppointmetsById,
     updateAppointmetsStatus,
-    createAppointmets
+    createAppointmets,
+    getMyappointments,
 }
