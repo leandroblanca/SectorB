@@ -2,7 +2,7 @@ import "./Services.css";
 import ServiceCard from "./ServiceCard";
 import { getServices } from "../../services/serviceService";
 import { useEffect, useState } from "react";
-
+import images from "../../assets/imagenes";
 function Services() {
   const [services, setServices] = useState([])
   useEffect(() => {
@@ -29,7 +29,7 @@ function Services() {
         (
           <ServiceCard
           key={service._id}
-          image={service.image}
+          image={images.peluqueria3}
           title={service.title}
           description={service.description}
           price={service.price}

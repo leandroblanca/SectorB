@@ -1,6 +1,7 @@
 import "./ServiceCard.css";
 
 function ServiceCard({image, title,description,price}) {
+    
     return(
         <div className="service-card">
             <img
@@ -9,11 +10,13 @@ function ServiceCard({image, title,description,price}) {
                 alt={title} />
             <div className="service-info">
                 <h3>{title}</h3>
-
+                <span className="service-price">${price}</span>
                 <p>{description}</p>
-
-                <span>${price}</span>
-
+            </div>
+            <div className="button-service">
+                <button>
+                    Reservar turno
+                </button>
             </div>
         </div>
     )
