@@ -2,19 +2,21 @@ import "./Services.css";
 import ServiceCard from "./ServiceCard";
 import { getServices } from "../../services/serviceService";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import images from "../../assets/imagenes";
 function Services() {
   const [services, setServices] = useState([])
   useEffect(() => {
     const loadServices = async() => {
-        const data = await getServices()
-
-        console.log("Datos recibidos:", data);
-        setServices(data)
+      try {
+        const data = await getServices();
+        setServices(data);
+      } catch {
+        toast.error("No se pudieron cargar los servicios", { toastId: "servicios" });
+      }
     }
     loadServices();
   }, [])
-  console.log(services)
   return (
     <section className="services">
       <div className="services-header">
@@ -29,7 +31,7 @@ function Services() {
         (
           <ServiceCard
           key={service._id}
-          image={images.peluqueria3}
+          image={images.peluqueria1}
           title={service.title}
           description={service.description}
           price={service.price}

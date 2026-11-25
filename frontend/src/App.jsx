@@ -12,6 +12,7 @@ import AdminLayout from "./pages/admin/AdminLayout.jsx";
 import AppointementsAdmin from "./pages/admin-appointments/Appointments.jsx";
 import ClientsAdmin from "./pages/admin-client/ClientAdmin.jsx";
 import ProfileAdmin from "./pages/admin-profile/ProfileAdmin.jsx"
+import Booking from "./pages/booking/Booking.jsx"
 
 function App() {
   return (
@@ -43,6 +44,13 @@ function App() {
             </ProtectedRoute>
           }
         />
+         <Route
+        path="/book-appointment"
+        element={
+          <ProtectedRoute allowedRoles={["client"]}>
+            <Booking/>
+          </ProtectedRoute>
+        }/>
       </Routes>
       <ToastContainer
         position="top-right"

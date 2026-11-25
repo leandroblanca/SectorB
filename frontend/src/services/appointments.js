@@ -29,6 +29,21 @@ async function getMyappointments() {
     const response = await api.get("/appointments/my-appointments")
     return response.data
 }
+async function getAvailability(barberId, date) {
+  const response = await api.get("/appointments/availability", {
+    params: {
+      barber: barberId,
+      date,
+    },
+  });
+
+  const { availableTimes } = response.data;
+  if (!Array.isArray(availableTimes)) {
+    throw new Error("La API no devolvió una lista de horarios.");
+  }
+
+  return availableTimes;
+}
 
 export{
     getAppointmets,
@@ -36,4 +51,5 @@ export{
     updateAppointmetsStatus,
     createAppointmets,
     getMyappointments,
+    getAvailability
 }

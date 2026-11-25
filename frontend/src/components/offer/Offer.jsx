@@ -23,7 +23,7 @@ function Offer(params) {
                     </button>
                 </div>
                 <div className="offer-image">
-                    <img src={images.peluqueria1} alt="Oferta SectorB" />
+                    <img src={images.peluqueria3} alt="Oferta SectorB" />
                 </div>
 
             </div>

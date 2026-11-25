@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ServiceCardAdmin from "../../components/admin-services/ServiceCardAdmin.jsx";
 import "./AdminService.css";
 import { toast } from "react-toastify";
+import { APPOINTMENT_DURATION } from "../../constants/appointments.js";
 import {
   getServices,
   createService,
@@ -16,7 +17,6 @@ function ServiceAdmin() {
     title: " ",
     description: " ",
     price: " ",
-    duration: " ",
   });
   const [search, setSearch] = useState("");
   const [selectedService, setSelectedService] = useState(null);
@@ -24,7 +24,6 @@ function ServiceAdmin() {
     title: "",
     description: "",
     price: "",
-    duration: "",
   });
   const [filterStatus, setFilterStatus] = useState("all");
   useEffect(() => {
@@ -50,7 +49,7 @@ function ServiceAdmin() {
 
   async function handleCreateService() {
     try {
-      const response = await createService(newService);
+      const response = await createService({ ...newService, duration: APPOINTMENT_DURATION });
       toast.success("Servicio creado correctamente");
       setServices((previousService) => [...previousService, response.service]);
       setShowCreateModal(false);
@@ -100,7 +99,10 @@ function ServiceAdmin() {
   }
   async function handleEditService() {
     try {
-      const response = await updateService(selectedService._id, editForm);
+      const response = await updateService(selectedService._id, {
+        ...editForm,
+        duration: APPOINTMENT_DURATION,
+      });
       setServices((edit) =>
         edit.map((service) =>
           service._id === selectedService._id ? response.service : service,
@@ -120,7 +122,6 @@ function ServiceAdmin() {
       title: "",
       description: "",
       price: "",
-      duration: "",
     });
   }
   return (
@@ -162,7 +163,7 @@ function ServiceAdmin() {
             title={service.title}
             description={service.description}
             price={service.price}
-            duration={service.duration}
+            duration={APPOINTMENT_DURATION}
             active={service.active}
             onInactivo={() => handleToggleService(service)}
             onEdit={() => {
@@ -171,7 +172,6 @@ function ServiceAdmin() {
                 title: service.title,
                 description: service.description,
                 price: service.price,
-                duration: service.duration,
               });
             }}
           />
@@ -221,8 +221,8 @@ function ServiceAdmin() {
               <input
                 type="number"
                 name="duration"
-                value={newService.duration}
-                onChange={handleCreateChange}
+                value={APPOINTMENT_DURATION}
+                readOnly
               />
             </div>
             <div className="edit-modal-actions">
@@ -287,8 +287,8 @@ function ServiceAdmin() {
                 <input
                   type="number"
                   name="duration"
-                  value={editForm.duration}
-                  onChange={handleEditChange}
+                  value={APPOINTMENT_DURATION}
+                  readOnly
                 />
               </div>
             </div>

@@ -188,6 +188,7 @@
 .appointment-row {
     display: grid;
     grid-template-columns:
+        105px
         90px
         1.5fr
         1.5fr
@@ -319,7 +320,7 @@
 
 @media (max-width: 1000px) {
 
-    .appointments-table-container {
+    .apppointments-table-container {
         overflow-x: auto;
     }
 
