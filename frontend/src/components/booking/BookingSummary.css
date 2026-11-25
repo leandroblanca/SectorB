@@ -1,0 +1,225 @@
+.booking-summary {
+  --summary-border: #4a4030;
+  --summary-gold: #f4ca52;
+  --summary-muted: #e2d6bd;
+  min-width: 0;
+  display: grid;
+  gap: 24px;
+}
+
+.booking-summary-card {
+  padding: 24px;
+  background: var(--card-tarjeta);
+  border: 1px solid var(--summary-border);
+  border-top: 4px solid var(--summary-gold);
+}
+
+.booking-summary-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--summary-border);
+}
+
+.booking-summary-heading h2 {
+  margin: 0;
+  font: 700 1.35rem Georgia, serif;
+}
+
+.booking-summary-heading span,
+.booking-summary-details dt,
+.booking-summary-gold strong,
+.booking-summary-notes,
+.booking-summary-specialists strong {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.booking-summary-heading span,
+.booking-summary-price,
+.booking-summary-gold {
+  color: var(--summary-gold);
+}
+
+.booking-summary-details {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+  font-size: 0.9rem;
+}
+
+.booking-summary dd {
+  margin: 0;
+}
+
+.booking-summary-details dt {
+  color: var(--summary-muted);
+  margin-bottom: 4px;
+}
+
+.booking-summary-details dd,
+.booking-summary-details dt,
+.booking-summary-totals > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.booking-summary-details dt span {
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.booking-summary-details dt svg,
+.booking-summary-hint svg {
+  color: var(--summary-gold);
+  vertical-align: middle;
+}
+
+.booking-summary-price {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.booking-summary-gold,
+.booking-summary-specialists {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #171614;
+  border: 1px solid var(--summary-border);
+}
+
+.booking-summary-gold small,
+.booking-summary-specialists p {
+  display: block;
+  margin: 3px 0 0;
+  color: var(--summary-muted);
+  font-size: 0.74rem;
+}
+
+.booking-summary-gold > span {
+  margin-left: auto;
+}
+
+.booking-summary-notes {
+  display: grid;
+  gap: 8px;
+  margin: 24px 0;
+  color: var(--summary-muted);
+}
+
+.booking-summary-notes textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid #38342c;
+  background: #161616;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: normal;
+  resize: vertical;
+}
+
+.booking-summary-notes textarea::placeholder {
+  color: #aca08a;
+}
+
+.booking-summary-totals {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--summary-border);
+  color: var(--summary-muted);
+  font-size: 0.84rem;
+}
+
+.booking-summary-totals > div:nth-child(2),
+.booking-summary-totals > div:last-child dd {
+  color: var(--summary-gold);
+}
+
+.booking-summary-totals > div:last-child {
+  padding-top: 9px;
+  border-top: 1px solid #38342c;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.booking-summary-totals > div:last-child dd {
+  font-family: Georgia, serif;
+  white-space: nowrap;
+}
+
+.booking-summary-confirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid var(--summary-gold);
+  background: var(--primary);
+  color: #16110a;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.booking-summary-confirm:hover:enabled {
+  background: var(--summary-gold);
+}
+
+.booking-summary-confirm:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.booking-summary-confirm:focus-visible,
+.booking-summary-notes textarea:focus-visible {
+  outline: 2px solid var(--summary-gold);
+  outline-offset: 2px;
+}
+
+.booking-summary-hint {
+  margin: 14px 0 0;
+  color: var(--summary-muted);
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.booking-summary-specialists {
+  background: #101010;
+  padding: 16px;
+}
+
+.booking-summary-specialists > svg {
+  flex: none;
+  box-sizing: content-box;
+  padding: 9px;
+  border: 1px solid var(--summary-border);
+  border-radius: 8px;
+  color: var(--summary-gold);
+}
+
+@media (max-width: 600px) {
+  .booking-summary-card {
+    padding: 20px;
+  }
+}

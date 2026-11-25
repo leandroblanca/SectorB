@@ -7,8 +7,6 @@ import Testimonials from "../components/testimonials/Testimonials";
 import useAuthStore from "../components/store/authStore";
 
 function Home() {
-    const user = useAuthStore((state) => state.user)
-    console.log(user)
     return (
         <>
         <NavBar/>

@@ -22,14 +22,14 @@ function NavBar() {
                 <NavLink to="/home">
                     Inicio
                 </NavLink>
-                <NavLink to="/">
+                <NavLink to="/book-appointment">
                     Reserva Turno
                 </NavLink>
                 <NavLink to="/">
-                    Mis Turnos
+                    Nosotros
                 </NavLink>
                 <NavLink to="/">
-                    Perfil
+                    Mi Perfil
                 </NavLink>
             </nav>
             <div className="navbar-user">
@@ -44,8 +44,8 @@ function NavBar() {
                             <NavLink to="">
                                 Mi Perfil
                             </NavLink>
-                            <NavLink to="">
-                                Mi Turno
+                            <NavLink to="/home">
+                                Inicio
                             </NavLink>
                             <button onClick={handleLogout}>
                                 Cerrar sesion

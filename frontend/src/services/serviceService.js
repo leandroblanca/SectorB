@@ -1,18 +1,8 @@
 import api from "./api";
 
 async function getServices() {
-    try {
-        const response = await api.get("/services")    
-        return response.data.services
-        
-    } catch (error) {
-        console.error(
-      "ERROR AL OBTENER SERVICIOS:",
-      error.response?.data || error.message
-    );
-
-    throw error;
-    }
+    const response = await api.get("/services")
+    return response.data.services
 }
 async function createService(serviceData) {
     const response = await api.post(

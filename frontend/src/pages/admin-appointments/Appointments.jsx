@@ -69,6 +69,18 @@ function AppointementsAdmin() {
   ).length;
 
   const handleUpdateStatus = async (id, status) => {
+    if (status === "in_progress") {
+      const turn = appointment.find((item) => item._id === id);
+      const today = new Date().toLocaleDateString("sv-SE", {
+        timeZone: "America/Argentina/Buenos_Aires",
+      });
+
+      if (turn?.date?.slice(0, 10) !== today) {
+        toast.error("Solo podés hacer el check-in en la fecha del turno");
+        return;
+      }
+    }
+
     try {
       await updateAppointmetsStatus(id, status);
       setAppointment((prevAppointments) =>
@@ -78,7 +90,7 @@ function AppointementsAdmin() {
       );
       toast.success("Estado del turno actualizado");
     } catch (error) {
-      toast.error("Error al actualizar el turno");
+      toast.error(error.response?.data?.message || "Error al actualizar el turno");
     }
   };
 
@@ -251,6 +263,7 @@ function AppointementsAdmin() {
           <span>{filteredAppointments.length} turnos visualizados</span>
         </div>
         <div className="appointments-table-header">
+          <span>FECHA</span>
           <span>HORA</span>
           <span>CLIENTE</span>
           <span>SERVICIO</span>

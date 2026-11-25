@@ -1,6 +1,13 @@
+import { APPOINTMENT_DURATION } from "../../constants/appointments.js";
+
 function AppointmentRow({ appointment, onUpdateStatus }) {
+  const date = appointment.date?.slice(0, 10);
+
   return (
     <div className="appointment-row">
+      <div className="appointment-date">
+        {date ? <time dateTime={date}>{date.split("-").reverse().join("/")}</time> : "—"}
+      </div>
       <div className="appointment-time">
         <strong>{appointment.time}</strong>
       </div>
@@ -12,7 +19,7 @@ function AppointmentRow({ appointment, onUpdateStatus }) {
       </div>
       <div className="appointment-service">
         <strong>{appointment.service?.name}</strong>
-        <small>{appointment.service?.duration} min</small>
+        <small>{APPOINTMENT_DURATION} min</small>
       </div>
       <div className="appointment-barber">
         <strong>{appointment.barber?.name}</strong>
