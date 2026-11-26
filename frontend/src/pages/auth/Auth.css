@@ -16,7 +16,7 @@
 
 body{
     background: var(--background-fondo);
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-body);
 }
 
 .login-page{

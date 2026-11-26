@@ -73,3 +73,22 @@
     .sidebar-menu { flex-direction: row; flex-wrap: wrap; gap: 8px; }
     .sidebar-menu a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 12px; }
 }
+.sidebar-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid var(--input);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--white);
+    font: inherit;
+    cursor: pointer;
+}
+
+.sidebar-logout:hover,
+.sidebar-logout:focus-visible {
+    border-color: var(--primary);
+    color: var(--primary);
+}

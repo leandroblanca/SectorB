@@ -130,7 +130,7 @@ function BookingCalendar({
       <div className="booking-section-header">
         <h2>
           <span>3</span>
-          FECHA Y HORA
+          Fecha y hora
         </h2>
 
         <p>{monthName.toUpperCase()}</p>
@@ -197,7 +197,7 @@ function BookingCalendar({
 
         <div className="booking-calendar-times">
 
-          <h3>HORARIOS DISPONIBLES</h3>
+          <h3>Horarios disponibles</h3>
 
           {!selectedBarber || !selectedDate ? (
             <p className="booking-calendar-message">

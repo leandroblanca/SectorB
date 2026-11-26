@@ -1,10 +1,17 @@
-import { FiGrid, FiScissors, FiCalendar, FiUsers, FiUser } from "react-icons/fi";
+import { FiGrid, FiScissors, FiCalendar, FiUsers, FiUser, FiLogOut } from "react-icons/fi";
 import "./Sidebar.css"
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import useAuthStore from "../store/authStore"
 
 function Sidebar () {
     const user = useAuthStore((state) => state.user)
+    const logout = useAuthStore((state) => state.logout)
+    const navigate = useNavigate()
+
+    function handleLogout() {
+        logout()
+        navigate("/login", { replace: true })
+    }
     return(
         <aside className="sidebar">
             <div className="sidebar-logo">
@@ -32,6 +39,9 @@ function Sidebar () {
                 <NavLink to="/admin/profile">
                     <FiUser className="ui-icon" aria-hidden="true" /> Perfil
                 </NavLink>
+                <button type="button" className="sidebar-logout" onClick={handleLogout}>
+                    <FiLogOut className="ui-icon" aria-hidden="true" /> Cerrar sesión
+                </button>
             </nav>
         </aside>
     )

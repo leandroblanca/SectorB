@@ -15,8 +15,8 @@
   margin-inline: auto;
 }
 
-.about-page :is(h1, h2, h3, blockquote) {
-  font-family: Georgia, serif;
+.about-page :is(h1, h2, h3) {
+  font-family: var(--font-title);
   line-height: 1.15;
 }
 
@@ -77,7 +77,7 @@
 .about-values article p { font-size: .9rem; color: var(--about-muted); }
 
 .about-quote { text-align: center; padding-block: clamp(32px, 5vw, 64px); }
-.about-quote > span { color: #b3923b; font: 700 2.4rem Georgia, serif; }
+.about-quote > span { color: #b3923b; font: 700 2.4rem var(--font-body); }
 .about-quote blockquote { margin: 18px auto 25px; max-width: 790px; font-size: clamp(1.5rem, 3vw, 2.15rem); font-style: italic; }
 
 .about-booking {

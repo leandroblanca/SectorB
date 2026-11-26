@@ -26,4 +26,3 @@ const client = {
 }
 
 export { images, avatar, client };
-export default images;

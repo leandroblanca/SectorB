@@ -7,7 +7,7 @@ function BookingService({services, selectedService, onSelectService}) {
             <div className="booking-section-header">
                 <h2>
                     <span>1</span>
-                    SELECCIONA TU SERVICIO
+                    Seleccioná tu servicio
                 </h2>
                 <p>{services.length} OPCIONES DISPONIBLES</p>
             </div>

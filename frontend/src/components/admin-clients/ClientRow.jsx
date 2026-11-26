@@ -1,3 +1,4 @@
+import { getBarberName } from "../../services/barberService.js";
 function ClientRow({client}) {
  const fullName = `${client.name || ""} ${client.lastname || ""}`.trim();
 
@@ -7,7 +8,7 @@ function ClientRow({client}) {
 
  const lastService = client.lastService || "Sin servicios";
 
- const barberName  = client.lastBarber?.name || "Sin asignar";
+ const barberName  = getBarberName(client.lastBarber) || "Sin asignar";
  
  const totalSpent = new Intl.NumberFormat("es-AR",{
     style: "currency",

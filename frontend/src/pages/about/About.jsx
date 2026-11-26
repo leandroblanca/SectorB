@@ -2,7 +2,7 @@ import { FiAward, FiClock, FiScissors, FiCalendar } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/layout/Navbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
-import images from "../../assets/imagenes.js";
+import { images } from "../../assets/imagenes.js";
 import "./About.css";
 
 const values = [

@@ -2,6 +2,7 @@ import { FiUser } from "react-icons/fi";
 import { useState } from "react";
 import { createAdmin } from "../../services/profileService";
 import { toast } from "react-toastify";
+import CreateBarberForm from "./CreateBarberForm.jsx";
 import "./ProfileAdmin.css";
 
 function ProfileAdmin() {
@@ -183,6 +184,7 @@ function ProfileAdmin() {
             </div>
           </form>
         </div>
+        <CreateBarberForm />
       </div>
     </section>
   );

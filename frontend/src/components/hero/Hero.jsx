@@ -1,3 +1,4 @@
+import { getBarberName } from "../../services/barberService.js";
 import { FiCalendar, FiAward } from "react-icons/fi";
 import { toast } from "react-toastify";
 import { getMyappointments } from "../../services/appointments";
@@ -80,7 +81,7 @@ function Hero() {
                   </span>
                   <span>{nextAppointment.time}</span>
                 </div>
-                <p>Barbero: {nextAppointment.barber?.name}</p>
+                <p>Barbero: {getBarberName(nextAppointment.barber)}</p>
                 <p>Estado: {nextAppointment.status}</p>
               </>
             ) : (
