@@ -15,6 +15,7 @@ import ProfileAdmin from "./pages/admin-profile/ProfileAdmin.jsx"
 import Booking from "./pages/booking/Booking.jsx"
 import Profil from "./profile/Profil.jsx";
 import About from "./pages/about/About.jsx";
+import Contact from "./pages/contact/Contact.jsx";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
             <About />
           </ProtectedRoute>
         } />
+        <Route path="/contacto" element={<Contact />} />
       </Routes>
       <ToastContainer
         position="top-right"

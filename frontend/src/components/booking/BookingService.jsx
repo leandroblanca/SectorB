@@ -1,3 +1,4 @@
+import { FiClock } from "react-icons/fi";
 import "./BookingService.css"
 import { APPOINTMENT_DURATION } from "../../constants/appointments.js";
 function BookingService({services, selectedService, onSelectService}) {
@@ -28,7 +29,7 @@ function BookingService({services, selectedService, onSelectService}) {
                                 ${service.price.toLocaleString("es-AR")}
                             </span>
                             <span className="booking-service-duration">
-                                ◷ {APPOINTMENT_DURATION} min
+                                <FiClock className="ui-icon" aria-hidden="true" /> {APPOINTMENT_DURATION} min
                             </span>
                         </div>
                     </article>

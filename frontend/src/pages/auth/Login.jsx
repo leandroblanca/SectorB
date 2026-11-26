@@ -1,7 +1,8 @@
+import { FiLogIn } from "react-icons/fi";
 import "../auth/Auth.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../../services/api.js";
 import { toast } from "react-toastify";
 import useAuthStore from "../../components/store/authStore";
 
@@ -22,8 +23,8 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/auth/login",
+      const response = await api.post(
+        "/auth/login",
         formData,
       );
       login(
@@ -75,7 +76,7 @@ function Login() {
               onChange={handleChange}
             />
           </div>
-          <button type="submit">Entrar</button>
+          <button type="submit"><FiLogIn className="ui-icon" aria-hidden="true" /> Entrar</button>
         </form>
         <p>
           No tengo una cuenta

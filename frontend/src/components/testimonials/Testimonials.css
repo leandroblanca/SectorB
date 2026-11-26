@@ -53,3 +53,8 @@
     letter-spacing:2px;
     text-transform:uppercase;
 }
+
+@media (max-width: 720px) {
+  .testimonials { padding: 40px 5%; }
+  .testimonials-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}

@@ -52,28 +52,28 @@ body{
 
 .login-container {
     color: var(--gray);
-    text-align: cente0r;
+    text-align: center;
     margin-bottom: 30px;
 }
 
-form{
+.login-container form{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-form div{
+.login-container form div{
     display: flex;
     flex-direction: column;   
 }
 
-label{
+.login-container label{
     color: var(--white);
     margin-bottom: 8px;
     font-weight: 600;
 }
 
-input{
+.login-container input{
     background: var(--input);
     border: none;
     outline: none;
@@ -83,11 +83,11 @@ input{
     font-size: 1rem;
 }
 
-input:focus{
+.login-container input:focus{
     border: 1px solid var(--primary);
 }
 
-button{
+.login-container button{
     margin-top: 15px;
     padding: 15px;
     background: var(--primary);
@@ -100,7 +100,7 @@ button{
     transition: 3s;
 }
 
-button:hover{
+.login-container button:hover{
     opacity: .85;
 }
 
@@ -114,4 +114,10 @@ button:hover{
     cursor: pointer;
     font-weight: bold;
     padding: 3px;
+}
+
+@media (max-width: 520px) {
+    .login-page { padding: 20px 16px; }
+    .login-container { padding: 28px 20px; margin-bottom: 0; }
+    .login-container input { min-width: 0; width: 100%; }
 }

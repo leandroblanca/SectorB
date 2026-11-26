@@ -1,3 +1,4 @@
+import { FiCalendar, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import "./DashboardCalendar.css";
 import { getAppointmets } from "../../services/appointments";
@@ -79,14 +80,14 @@ function DashboardCalendar(params) {
   return (
     <section className="dashboard-calendar">
       <div className="calendar-header">
-        <h2>Calendario</h2>
+        <h2><FiCalendar className="ui-icon" aria-hidden="true" /> Calendario</h2>
         <div className="calendar-controls">
           <button onClick={previusMonth} aria-label="Mes anterior">
-            ‹
+            <FiChevronLeft className="ui-icon" aria-hidden="true" />
           </button>
           <span>{monthName}</span>
           <button onClick={nexMonth} aria-label="Mes siguiente">
-            ›
+            <FiChevronRight className="ui-icon" aria-hidden="true" />
           </button>
         </div>
       </div>

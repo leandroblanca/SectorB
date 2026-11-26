@@ -1,3 +1,4 @@
+import { FiCalendar, FiAward } from "react-icons/fi";
 import { toast } from "react-toastify";
 import { getMyappointments } from "../../services/appointments";
 import "./Hero.css";
@@ -69,7 +70,7 @@ function Hero() {
                 <h2>{nextAppointment.service?.title}</h2>
                 <div className="info-card">
                   <span>
-                    📅{" "}
+                    <FiCalendar className="ui-icon" aria-hidden="true" />{" "}
                     {new Date(
                       `${nextAppointment.date.slice(0, 10)}T${nextAppointment.time}:00`,
                     ).toLocaleDateString("es-AR", {
@@ -95,7 +96,7 @@ function Hero() {
 
           <div className="member-card">
             <span className="card-subtitle">SECTORB CLUB</span>
-            <h2>Miembro Gold</h2>
+            <h2><FiAward className="ui-icon" aria-hidden="true" /> Miembro Gold</h2>
 
             <p>Cortes realizados: {completedCuts}</p>
 

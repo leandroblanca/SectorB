@@ -1,3 +1,4 @@
+import { FiPlus } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import {
     createAppointmets,
@@ -154,7 +155,7 @@ function AppointementsAdmin() {
             className="search-appointment"
             onChange={(e) => setSearchClient(e.target.value)}
           />
-          <button className="new-appointment-button" onClick={() => setShowCreateModal(true)}>+ Nuevo Turno</button>
+          <button className="new-appointment-button" onClick={() => setShowCreateModal(true)}><FiPlus className="ui-icon" aria-hidden="true" /> Nuevo Turno</button>
         </div>
       </div>
       <div className="appointments-cards">

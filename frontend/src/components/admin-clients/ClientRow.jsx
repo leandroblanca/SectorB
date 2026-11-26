@@ -22,9 +22,10 @@ function ClientRow({client}) {
                 <span className="client-email">{client.email}</span>
             </div>
         </td>
-        <td>{lastVisit}</td>
-        <td>{lastService}</td>
-        <td>{barberName}</td>
+        <td data-label="Última visita">{lastVisit}</td>
+        <td data-label="Último servicio">{lastService}</td>
+        <td data-label="Barbero">{barberName}</td>
+        <td className="client-total-spent" data-label="Gasto acumulado">{totalSpent}</td>
     </tr>
  )
 }

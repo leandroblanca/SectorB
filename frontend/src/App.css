@@ -1,3 +1,8 @@
+.ui-icon {
+  vertical-align: -0.12em;
+  flex-shrink: 0;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;

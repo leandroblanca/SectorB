@@ -1,3 +1,4 @@
+import { FiChevronLeft, FiChevronRight, FiClock } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { APPOINTMENT_DURATION } from "../../constants/appointments.js";
@@ -149,7 +150,7 @@ function BookingCalendar({
                 disabled={currentMonthKey <= todayMonthKey}
                 onClick={() => changeMonth(-1)}
               >
-                ‹
+                <FiChevronLeft className="ui-icon" aria-hidden="true" />
               </button>
 
               <button
@@ -157,7 +158,7 @@ function BookingCalendar({
                 aria-label="Mes siguiente"
                 onClick={() => changeMonth(1)}
               >
-                ›
+                <FiChevronRight className="ui-icon" aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -231,7 +232,7 @@ function BookingCalendar({
           )}
 
           <p className="booking-calendar-zone">
-            ◷ Hora argentina (GMT-3)
+            <FiClock className="ui-icon" aria-hidden="true" /> Hora argentina (GMT-3)
           </p>
 
           <p className="booking-calendar-duration">

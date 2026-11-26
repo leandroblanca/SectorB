@@ -1,7 +1,8 @@
+import { FiUserPlus } from "react-icons/fi";
 import { useState } from "react";
 import "../auth/Auth.css";
 import {Link, useNavigate} from "react-router-dom";
-import axios from "axios";
+import api from "../../services/api.js";
 import { toast } from "react-toastify";
 
 
@@ -25,7 +26,7 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post("http://localhost:3000/api/auth/register",
+            const response = await api.post("/auth/register",
                 formData
             )
             toast.success(response.data.message)
@@ -90,7 +91,7 @@ function Register() {
                          />
                     </div>
                     <button type="submit">
-                        Entrar
+                        <FiUserPlus className="ui-icon" aria-hidden="true" /> Entrar
                     </button>
                 </form>
                 <p>No tengo una cuenta<Link to="/login" className="login-link">Login</Link></p>

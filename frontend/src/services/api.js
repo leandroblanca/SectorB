@@ -1,8 +1,11 @@
 import axios from "axios";
 
+const configuredApi = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+const useLocalProxy = import.meta.env.DEV && configuredApi.replace(/\/$/, "") === "http://localhost:3000/api";
+
 const api = axios.create(
     {
-        baseURL: import.meta.env.VITE_API_URL || "http://localhost:3000/api"
+        baseURL: useLocalProxy ? "/api" : configuredApi
     }
 )
 api.interceptors.request.use((config) => {

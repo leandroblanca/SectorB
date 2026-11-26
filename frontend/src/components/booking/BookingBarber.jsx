@@ -1,3 +1,4 @@
+import { FiCheck } from "react-icons/fi";
 import "./BookingBarber.css";
 
 function BookingBarber({ barbers, selectedBarber, onSelectedBarber }) {
@@ -27,7 +28,7 @@ function BookingBarber({ barbers, selectedBarber, onSelectedBarber }) {
               />
 
               {selectedBarber?._id === barber._id && (
-                <span className="booking-barber-check">✓</span>
+                <span className="booking-barber-check"><FiCheck className="ui-icon" aria-hidden="true" /></span>
               )}
             </div>
             <div className="booking-barber-info">
