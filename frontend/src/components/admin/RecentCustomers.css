@@ -271,3 +271,16 @@
 .add-customer-button:hover{
     opacity: 0.85;
 }
+
+.edit-modal-overlay { padding: 16px; }
+.edit-modal { max-width: 100%; max-height: calc(100dvh - 32px); overflow-y: auto; }
+.recent-customer-header, .customer-header-actions, .edit-modal-actions { flex-wrap: wrap; gap: 10px; }
+.customer-row { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .recent-customer { margin: 0 16px 24px; }
+  .recent-customer-header { padding: 16px; }
+  .customers-table-header { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); }
+  .customer-row { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; padding: 16px; border-bottom: 1px solid var(--input); }
+  .customer-row > :nth-child(2), .customer-row > :nth-child(3) { grid-column: 1 / -1; }
+  .customers-action { justify-self: end; min-width: 44px; min-height: 44px; }
+}

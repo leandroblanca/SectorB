@@ -47,6 +47,8 @@
   gap: 8px;
   padding: 11px 19px;
   min-height: 40px;
+  margin: 0;
+  line-height: 1.25;
   box-sizing: border-box;
   border: 1px solid #544832;
   border-radius: 2px;

@@ -1,3 +1,4 @@
+import { FiHome, FiCalendar, FiInfo, FiUser, FiLogOut } from "react-icons/fi";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css"
 import { useState } from "react";
@@ -20,23 +21,25 @@ function NavBar() {
             </div>
             <nav className="navbar-links">
                 <NavLink to="/home">
-                    Inicio
+                    <FiHome className="ui-icon" aria-hidden="true" /> Inicio
                 </NavLink>
                 <NavLink to="/book-appointment">
-                    Reserva Turno
+                    <FiCalendar className="ui-icon" aria-hidden="true" /> Reserva Turno
                 </NavLink>
                 <NavLink to="/nosotros">
-                    Nosotros
+                    <FiInfo className="ui-icon" aria-hidden="true" /> Nosotros
                 </NavLink>
                 <NavLink to="/profile">
-                    Mi Perfil
+                    <FiUser className="ui-icon" aria-hidden="true" /> Mi Perfil
                 </NavLink>
             </nav>
             <div className="navbar-user">
                 <button
                 className="user-button"
+                type="button"
+                aria-expanded={showMenu}
                 onClick={() => setShowMenu(!showMenu)}>
-                    {user?.name}
+                    <FiUser className="ui-icon" aria-hidden="true" /> <span>{user?.name || "Cuenta"}</span>
                 </button>
                 {
                     showMenu && (
@@ -48,7 +51,7 @@ function NavBar() {
                                 Inicio
                             </NavLink>
                             <button onClick={handleLogout}>
-                                Cerrar sesion
+                                <FiLogOut className="ui-icon" aria-hidden="true" /> Cerrar sesión
                             </button>
                         </div>
                     )

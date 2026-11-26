@@ -202,3 +202,18 @@
   font-size: 0.8rem;
   margin-top: 10px;
 }
+
+.calendar-header { flex-wrap: wrap; gap: 12px; }
+.calendar-controls button { display: grid; place-items: center; margin: 0; padding: 0; }
+.calendar-grid, .calendar-weekdays { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+@media (max-width: 700px) {
+  .dashboard-calendar { padding: 12px; }
+  .calendar-header { margin-bottom: 16px; }
+  .calendar-controls { width: 100%; justify-content: space-between; gap: 6px; }
+  .calendar-controls span { min-width: 0; }
+  .calendar-controls button { width: 44px; height: 44px; flex-shrink: 0; }
+  .calendar-grid, .calendar-weekdays { gap: 3px; }
+  .calendar-day { min-height: 44px; padding: 3px; text-align: center; }
+  .calendar-day-info { align-items: center; margin-top: 4px; }
+  .calendar-day-info span { font-size: .6rem; overflow-wrap: anywhere; }
+}

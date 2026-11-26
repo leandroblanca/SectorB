@@ -1,3 +1,4 @@
+import { FiUsers } from "react-icons/fi";
 import { useState } from "react";
 import "./ClientAdmin.css";
 import { useEffect } from "react";
@@ -68,7 +69,7 @@ import { toast } from "react-toastify";
       <header className="clients-header">
         <div>
           <span className="clients-title-admin">Administracion</span>
-          <h1>Directorio de clientes</h1>
+          <h1><FiUsers className="ui-icon" aria-hidden="true" /> Directorio de clientes</h1>
           <p>Consulta y gestion de los clientes registrado en sectorB.</p>
         </div>
         <input

@@ -1,4 +1,4 @@
-import { FiAward, FiClock, FiScissors } from "react-icons/fi";
+import { FiAward, FiClock, FiScissors, FiCalendar } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/layout/Navbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
@@ -66,7 +66,7 @@ function About() {
           <p className="about-kicker">Cita en el atelier</p>
           <h2 id="about-booking-title">Descubre la Experiencia SectorB</h2>
           <p>Permítase un instante de pausa absoluta en manos expertas. Seleccione su momento predilecto y viva el auténtico ritual de grooming tradicional.</p>
-          <Link to="/book-appointment">Reservar turno</Link>
+          <Link to="/book-appointment"><FiCalendar className="ui-icon" aria-hidden="true" /> Reservar turno</Link>
         </section>
       </main>
       <Footer />

@@ -35,27 +35,18 @@
 }
 .services-grid {
     display: flex;
-    flex-wrap: nowrap;
     gap: 28px;
+    max-width: 100%;
     overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 20px;
-    scroll-snap-type: x mandatory;
+    padding-block: 8px 20px;
+    scroll-snap-type: x proximity;
     scrollbar-width: thin;
     scrollbar-color: var(--primary) var(--card-tarjeta);
 }
-.services-grid::-webkit-scrollbar {
-    height: 8px;
-}
 
-.services-grid::-webkit-scrollbar-track {
-    background: var(--card-tarjeta);
-    border-radius: 10px;
-}
-
-.services-grid::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
+.services-grid > .service-card {
+    max-width: 100%;
+    scroll-snap-align: start;
 }
 
 .view-all{
@@ -84,4 +75,12 @@
 
 .view-all:hover::after{
     width:100%;
+}
+
+
+@media (max-width: 700px) {
+  .services { padding: 40px 5%; }
+  .services-header { gap: 12px; align-items: flex-start; flex-direction: column; margin-bottom: 20px; }
+  .services-title h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .services-grid { gap: 16px; }
 }

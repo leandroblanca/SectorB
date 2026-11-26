@@ -1,3 +1,4 @@
+import { FiUser } from "react-icons/fi";
 import { useState } from "react";
 import { createAdmin } from "../../services/profileService";
 import { toast } from "react-toastify";
@@ -54,7 +55,7 @@ function ProfileAdmin() {
     <section className="profile-admin">
       <div className="profile-admin-header">
         <div>
-          <h1>Mi Perfil</h1>
+          <h1><FiUser className="ui-icon" aria-hidden="true" /> Mi Perfil</h1>
           <p>Administra tu cuenta y los accesos al sistema</p>
         </div>
       </div>

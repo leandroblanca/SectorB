@@ -1,6 +1,8 @@
+import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp, FaFacebookF } from "react-icons/fa";
+import { ADDRESS, EMAIL, PHONE } from "../../constants/contact.js";
 
 function Footer() {
   return (
@@ -13,9 +15,9 @@ function Footer() {
         </p>
 
         <div className="footer-contact">
-          <span>Av. Roca 1234</span>
-          <span>+54 381 627 6191</span>
-          <span>✉ contacto@sectorb.com</span>
+          <span><FiMapPin className="ui-icon" aria-hidden="true" /> {ADDRESS}</span>
+          <span><FiPhone className="ui-icon" aria-hidden="true" /> {PHONE}</span>
+          <span><FiMail className="ui-icon" aria-hidden="true" /> {EMAIL}</span>
         </div>
       </div>
       <div className="footer-navigation">
@@ -24,6 +26,7 @@ function Footer() {
         <Link to="/book-appointment">Reservar Turno</Link>
         <Link to="/my-appointments">Mis turnos</Link>
         <Link to="/profile">Mi Perfil</Link>
+        <Link to="/contacto"><FiMail className="ui-icon" aria-hidden="true" /> Contacto</Link>
       </div>
       <div className="footer-social">
         <h3>Seguinos</h3>

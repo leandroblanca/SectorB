@@ -1,3 +1,4 @@
+import { FiGrid, FiScissors, FiCalendar, FiUsers, FiUser } from "react-icons/fi";
 import "./Sidebar.css"
 import { NavLink } from "react-router-dom"
 import useAuthStore from "../store/authStore"
@@ -17,19 +18,19 @@ function Sidebar () {
             </div>
             <nav className="sidebar-menu">
                 <NavLink to="/admin">
-                    Dashboard
+                    <FiGrid className="ui-icon" aria-hidden="true" /> Dashboard
                 </NavLink>
                 <NavLink to="/admin/services">
-                    Servicios
+                    <FiScissors className="ui-icon" aria-hidden="true" /> Servicios
                 </NavLink>
                 <NavLink to="/admin/appointments">
-                    Turnos
+                    <FiCalendar className="ui-icon" aria-hidden="true" /> Turnos
                 </NavLink>
                 <NavLink to="/admin/clients">
-                    Clientes
+                    <FiUsers className="ui-icon" aria-hidden="true" /> Clientes
                 </NavLink>
                 <NavLink to="/admin/profile">
-                    Perfil
+                    <FiUser className="ui-icon" aria-hidden="true" /> Perfil
                 </NavLink>
             </nav>
         </aside>

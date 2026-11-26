@@ -45,12 +45,18 @@
 
 .booking-calendar-controls {
   display: flex;
+  align-items: center;
+  flex-shrink: 0;
   gap: 6px;
 }
 
 .booking-calendar-controls button {
-  width: 30px;
-  height: 30px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
   background: transparent;
   border: 1px solid var(--input);
   border-radius: 5px;
@@ -196,6 +202,7 @@
 /* Responsive */
 
 @media (max-width: 650px) {
+  .booking-calendar-controls button { width: 44px; height: 44px; }
   .booking-calendar-panel {
     grid-template-columns: 1fr;
     padding: 16px;

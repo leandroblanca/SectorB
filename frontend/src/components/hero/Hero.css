@@ -124,3 +124,12 @@
     color: var(--gray);
     line-height: 1.6;
 }
+
+.hero-content h1 { font-size: clamp(2rem, 6vw, 4rem); }
+@media (max-width: 700px) {
+  .hero { min-height: 0; padding: 40px 5%; }
+  .hero-content p { font-size: 1rem; }
+  .hero-cards { flex-direction: column; gap: 16px; margin-top: 24px; }
+  .content-card, .member-card { padding: 20px; }
+  .info-card, .buttons-card { flex-wrap: wrap; gap: 12px; }
+}

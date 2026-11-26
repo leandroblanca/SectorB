@@ -1,3 +1,4 @@
+import { FiPlus } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import ServiceCardAdmin from "../../components/admin-services/ServiceCardAdmin.jsx";
 import "./AdminService.css";
@@ -135,7 +136,7 @@ function ServiceAdmin() {
           className="add-service-button"
           onClick={() => setShowCreateModal(true)}
         >
-          + Agregar servicio
+          <FiPlus className="ui-icon" aria-hidden="true" /> Agregar servicio
         </button>
       </div>
 
