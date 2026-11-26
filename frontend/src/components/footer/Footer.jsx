@@ -30,17 +30,19 @@ function Footer() {
       </div>
       <div className="footer-social">
         <h3>Seguinos</h3>
-         <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
+        <div className="footer-social-icons">
+          <Link to="/404" aria-label="Facebook">
             <FaFacebookF />
-          </a>
+          </Link>
 
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <Link to="/404" aria-label="Instagram">
             <FaInstagram />
-          </a>
+          </Link>
 
-          <a href="https://www.whatsapp.com/" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <Link to="/404" aria-label="WhatsApp">
             <FaWhatsapp />
-          </a>
+          </Link>
+        </div>
       </div>
       <div className="footer-copy">
         <p>© 2026 SECTORB. TODOS LOS DERECHOS RESERVADOS</p>

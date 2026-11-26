@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css"
 import { useState } from "react";
 import useAuthStore from "../store/authStore";
+import { client } from "../../assets/imagenes.js";
 
 function NavBar() {
     const navigate = useNavigate()
@@ -39,7 +40,8 @@ function NavBar() {
                 type="button"
                 aria-expanded={showMenu}
                 onClick={() => setShowMenu(!showMenu)}>
-                    <FiUser className="ui-icon" aria-hidden="true" /> <span>{user?.name || "Cuenta"}</span>
+                    {user ? <img className="navbar-avatar" src={client.client} alt="" /> : <FiUser className="ui-icon" aria-hidden="true" />}
+                    <span>{user?.name || "Cuenta"}</span>
                 </button>
                 {
                     showMenu && (

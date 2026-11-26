@@ -1,4 +1,5 @@
 import { FiCheck } from "react-icons/fi";
+import { avatar } from "../../assets/imagenes";
 import "./BookingBarber.css";
 
 function BookingBarber({ barbers, selectedBarber, onSelectedBarber }) {
@@ -14,28 +15,27 @@ function BookingBarber({ barbers, selectedBarber, onSelectedBarber }) {
 
       <div className="booking-barbers-grid">
         {barbers.map((barber) => (
-          <article
+          <button
             key={barber._id}
-            className={`booking-barber-card ${
+            type="button"
+            aria-pressed={selectedBarber?._id === barber._id}
+            className={`booking-barber-option ${
               selectedBarber?._id === barber._id ? "selected" : ""
             }`}
             onClick={() => onSelectedBarber(barber)}
           >
-                        <div className="booking-barber-image">
+            <span className="booking-barber-image">
               <img
-                src={barber.image || "/images/barber-placeholder.jpg"}
-                alt={`Barbero ${barber.name}`}
+                src={avatar.avatar1}
+                alt=""
               />
 
               {selectedBarber?._id === barber._id && (
                 <span className="booking-barber-check"><FiCheck className="ui-icon" aria-hidden="true" /></span>
               )}
-            </div>
-            <div className="booking-barber-info">
-              <h3>{barber.name}</h3>
-              <p>BARBEROS</p>
-            </div>
-          </article>
+            </span>
+            <span className="booking-barber-name">{barber.name}</span>
+          </button>
         ))}
       </div>
     </section>
