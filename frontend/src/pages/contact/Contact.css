@@ -11,7 +11,7 @@
 
 .contact-container { max-width: 1184px; margin-inline: auto; }
 .contact-page :is(h1, h2, h3, p, figure, blockquote) { margin: 0; }
-.contact-page :is(h1, h2, h3, blockquote, address) { font-family: Georgia, serif; }
+.contact-page :is(h1, h2, h3) { font-family: var(--font-title); }
 .contact-page p { line-height: 1.65; }
 .contact-page h2 { font-size: clamp(1.45rem, 3vw, 2.1rem); }
 

@@ -1,3 +1,4 @@
+import { getBarberName } from "../../services/barberService.js";
 import "./AppointmentHistoryItem.css";
 import { FiCheck, FiRotateCcw } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -11,7 +12,7 @@ export default function AppointmentHistoryItem({ appointment }) {
       <div>
         <div className="client-profile-inline"><h3>{appointment.service?.title || "Turno"}</h3><span className="client-profile-caption">Completado</span></div>
         <p className="client-profile-muted">
-          Barbero: {appointment.barber?.name || "—"} · {date.toLocaleDateString("es-AR", { dateStyle: "medium", timeZone: "UTC" })}
+          Barbero: {getBarberName(appointment.barber) || "—"} · {date.toLocaleDateString("es-AR", { dateStyle: "medium", timeZone: "UTC" })}
           {appointment.service?.price != null && ` · $${appointment.service.price.toLocaleString("es-AR")}`}
         </p>
       </div>

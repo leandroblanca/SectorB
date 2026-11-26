@@ -6,7 +6,7 @@ import {
   updateAppointmetsStatus,
 } from "../../services/appointments.js";
 import { getUsers } from "../../services/useService.js";
-import { getBarber } from "../../services/barberService.js";
+import { getBarber, getBarberName } from "../../services/barberService.js";
 import { getServices } from "../../services/serviceService.js";
 import { toast } from "react-toastify";
 import AppointmentRow from "../../components/admin-appointments/AppointmentRow.jsx";
@@ -37,7 +37,7 @@ function AppointementsAdmin() {
         
         setAppointment(appointmentsData);
         setClients(usersData.filter((user) => user.role === "client"))
-        setServices(servicesData)
+        setServices(servicesData.filter((service) => service.active !== false))
         setBarbers(barbersData)
       } catch (error) {
         toast.error("Error al obtener los Turnos");
@@ -335,7 +335,7 @@ function AppointementsAdmin() {
                   <option value="">Seleccionar barbero</option>
                   {barbers.map((barber) => (
                     <option key={barber._id} value={barber._id}>
-                      {barber.name}
+                      {getBarberName(barber)}
                     </option>
                   ))}
                   </select>

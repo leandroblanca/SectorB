@@ -16,7 +16,7 @@
   border-radius: 14px;
   background: radial-gradient(at top, #483b23, #121211 75%);
   color: var(--profile-gold);
-  font: 700 2.3rem Georgia, serif;
+  font: 700 2.3rem var(--font-body);
 }
 
 .client-profile-header .client-profile-actions { align-items: stretch; }

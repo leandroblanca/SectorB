@@ -1,3 +1,4 @@
+import { getBarberName } from "../../services/barberService.js";
 import { FiArrowRight, FiAward, FiClock, FiInfo } from "react-icons/fi";
 import { APPOINTMENT_DURATION } from "../../constants/appointments.js";
 import "./BookingSummary.css";
@@ -45,7 +46,7 @@ function BookingSummary({ service, barber, date, time, submitting, onConfirm }) 
           </div>
           <div>
             <dt>Especialista</dt>
-            <dd>{barber?.name || "Elegí un barbero"}</dd>
+            <dd>{getBarberName(barber) || "Elegí un barbero"}</dd>
           </div>
           <div>
             <dt>Fecha y horario {service && <span><FiClock aria-hidden="true" /> {APPOINTMENT_DURATION} min</span>}</dt>

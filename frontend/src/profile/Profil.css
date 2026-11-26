@@ -18,7 +18,7 @@
 
 .client-profile h1,
 .client-profile h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-title);
   letter-spacing: -.025em;
   line-height: 1.15;
 }

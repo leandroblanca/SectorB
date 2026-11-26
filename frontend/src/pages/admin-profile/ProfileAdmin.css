@@ -316,3 +316,6 @@ justify-content: stretch;
 width: 100%;
 }
 }
+.profile-admin-barber-form {
+  grid-column: -2 / -1;
+}

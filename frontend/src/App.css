@@ -1,3 +1,18 @@
+:root {
+  --font-title: "Playfair Display", Georgia, serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+body,
+button, input, select, textarea {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  text-transform: capitalize;
+}
+
 .ui-icon {
   vertical-align: -0.12em;
   flex-shrink: 0;

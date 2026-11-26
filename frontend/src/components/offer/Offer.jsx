@@ -1,4 +1,4 @@
-import images from "../../assets/imagenes";
+import { images } from "../../assets/imagenes.js";
 import "./Offer.css"
 
 function Offer(params) {

@@ -3,14 +3,14 @@ import ServiceCard from "./ServiceCard";
 import { getServices } from "../../services/serviceService";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import images from "../../assets/imagenes";
+import { images } from "../../assets/imagenes.js";
 function Services() {
   const [services, setServices] = useState([])
   useEffect(() => {
     const loadServices = async() => {
       try {
         const data = await getServices();
-        setServices(data);
+        setServices(data.filter((service) => service.active !== false));
       } catch {
         toast.error("No se pudieron cargar los servicios", { toastId: "servicios" });
       }

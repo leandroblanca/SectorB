@@ -1,3 +1,4 @@
+import { getBarberName } from "../../services/barberService.js";
 import { FiCheck } from "react-icons/fi";
 import { avatar } from "../../assets/imagenes";
 import "./BookingBarber.css";
@@ -8,7 +9,7 @@ function BookingBarber({ barbers, selectedBarber, onSelectedBarber }) {
       <div className="booking-section-header">
         <h2>
           <span>2</span>
-          SELECCIONA BARBERO
+          Seleccioná barbero
         </h2>
         <p>{barbers.length} OPCIONES DISPONIBLES</p>
       </div>
@@ -26,7 +27,7 @@ function BookingBarber({ barbers, selectedBarber, onSelectedBarber }) {
           >
             <span className="booking-barber-image">
               <img
-                src={avatar.avatar1}
+                src={barber.image || avatar.avatar1}
                 alt=""
               />
 
@@ -34,7 +35,7 @@ function BookingBarber({ barbers, selectedBarber, onSelectedBarber }) {
                 <span className="booking-barber-check"><FiCheck className="ui-icon" aria-hidden="true" /></span>
               )}
             </span>
-            <span className="booking-barber-name">{barber.name}</span>
+            <span className="booking-barber-name">{getBarberName(barber)}</span>
           </button>
         ))}
       </div>

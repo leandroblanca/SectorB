@@ -1,3 +1,4 @@
+import { getBarberName } from "../../services/barberService.js";
 import "./NextAppointment.css";
 import { FiCalendar, FiClock } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -15,7 +16,7 @@ export default function NextAppointment({ appointment, loading, failed }) {
       {appointment ? (
         <>
           <h2 className="client-profile-appointment-title">{appointment.service?.title || "Turno"}</h2>
-          <p className="client-profile-muted">Barbero especialista · <strong>{appointment.barber?.name || "—"}</strong></p>
+          <p className="client-profile-muted">Barbero especialista · <strong>{getBarberName(appointment.barber) || "—"}</strong></p>
           <div className="client-profile-slot">
             <div><span><FiCalendar /> {date.toLocaleDateString("es-AR", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" })}</span><strong>{date.getUTCFullYear()}</strong></div>
             <div><span><FiClock /> {appointment.time} hs ({APPOINTMENT_DURATION} min)</span>{appointment.service?.price != null && <strong className="client-profile-kicker">${appointment.service.price.toLocaleString("es-AR")}</strong>}</div>

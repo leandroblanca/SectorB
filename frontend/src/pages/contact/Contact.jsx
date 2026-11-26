@@ -2,7 +2,7 @@ import { FiArrowUpRight, FiCalendar, FiMail, FiMapPin, FiMessageCircle, FiNaviga
 import { Link } from "react-router-dom";
 import Navbar from "../../components/layout/Navbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
-import images from "../../assets/imagenes.js";
+import { images } from "../../assets/imagenes.js";
 import { ADDRESS, EMAIL, PHONE } from "../../constants/contact.js";
 import "./Contact.css";
 

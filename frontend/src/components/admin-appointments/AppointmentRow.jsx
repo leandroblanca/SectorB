@@ -1,3 +1,4 @@
+import { getBarberName } from "../../services/barberService.js";
 import { APPOINTMENT_DURATION } from "../../constants/appointments.js";
 
 function AppointmentRow({ appointment, onUpdateStatus }) {
@@ -22,7 +23,7 @@ function AppointmentRow({ appointment, onUpdateStatus }) {
         <small>{APPOINTMENT_DURATION} min</small>
       </div>
       <div className="appointment-barber" data-label="Barbero">
-        <strong>{appointment.barber?.name}</strong>
+        <strong>{getBarberName(appointment.barber)}</strong>
       </div>
       <div className="appointment-status-container" data-label="Estado">
         <span className={`appointment-status status-${appointment.status}`}>
