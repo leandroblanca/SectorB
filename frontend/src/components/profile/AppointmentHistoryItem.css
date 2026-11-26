@@ -1,0 +1,9 @@
+.client-profile-history-item { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 19px; background: #201f1e; border: 1px solid #363028; }
+.client-profile-history-icon { display: grid; place-items: center; width: 46px; height: 46px; background: #34312d; color: var(--profile-gold); font-size: 1.3rem; }
+.client-profile-history-item .client-profile-caption { background: #34312d; padding: 3px 7px; }
+.client-profile-history-item .client-profile-button { color: var(--profile-gold); background: #302a20; }
+
+@media (max-width: 700px) {
+  .client-profile-history-item { grid-template-columns: auto minmax(0, 1fr); }
+  .client-profile-history-item .client-profile-button { grid-column: 2; justify-self: start; }
+}

@@ -1,0 +1,7 @@
+.client-profile-quote { margin: 30px 0 0; padding-bottom: 130px; text-align: center; }
+.client-profile-quote blockquote { margin: 0 0 12px; color: var(--profile-muted); font: italic 1.55rem Georgia, serif; }
+.client-profile-quote figcaption { color: var(--profile-gold); }
+
+@media (max-width: 700px) {
+  .client-profile-quote { padding-bottom: 70px; }
+}

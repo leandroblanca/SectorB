@@ -7,4 +7,14 @@ async function createAdmin(formData) {
     return response.data
 }
 
-export {createAdmin}
+async function getMyProfile() {
+    const response = await api.get("/users/me")
+    return response.data.user
+}
+
+async function updateMyProfile(data) {
+    const response = await api.patch("/users/me", data)
+    return response.data.user
+}
+
+export {createAdmin, getMyProfile, updateMyProfile}

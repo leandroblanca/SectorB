@@ -1,0 +1,21 @@
+.client-profile-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; border: 0; margin: 0; min-width: 0; padding: 0; }
+.client-profile-fields label { display: grid; gap: 8px; color: var(--profile-muted); font-size: .8rem; font-weight: 700; text-transform: uppercase; }
+.client-profile-fields label span { position: relative; display: block; }
+.client-profile-fields input { width: 100%; box-sizing: border-box; padding: 12px 35px 12px 14px; background: #171717; border: 1px solid #363330; color: #eeeae7; font: inherit; text-transform: none; color-scheme: dark; }
+.client-profile-fields label svg { pointer-events: none; position: absolute; right: 13px; top: 50%; transform: translateY(-50%); }
+.client-profile-password { margin: 20px 0; }
+.client-profile-password summary { cursor: pointer; color: var(--profile-gold); font-size: .8rem; font-weight: 700; }
+.client-profile-password fieldset { margin-top: 14px; }
+.client-profile-form-actions { justify-content: flex-end; border-top: 1px solid #332e27; padding-top: 16px; }
+#datos-personales { scroll-margin-top: 100px; padding: clamp(16px, 2vw, 24px); }
+#datos-personales .client-profile-card-heading { padding-bottom: 16px; margin-bottom: 16px; }
+#datos-personales .client-profile-fields { gap: 16px; }
+#datos-personales .client-profile-password { margin: 14px 0; }
+
+@media (max-width: 950px) {
+  .client-profile-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .client-profile-fields { grid-template-columns: minmax(0, 1fr); }
+}

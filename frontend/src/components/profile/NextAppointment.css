@@ -1,0 +1,9 @@
+.client-profile-slot svg { color: var(--profile-gold); }
+
+.client-profile h2.client-profile-appointment-title { margin: 19px 0 8px; }
+.client-profile-slot { margin: 24px 0; padding: 4px 16px; border: 1px solid #363028; background: #201f1e; }
+.client-profile-slot div { display: flex; justify-content: space-between; gap: 8px; padding: 12px 0; font-size: .85rem; }
+.client-profile-slot div + div { border-top: 1px solid #332e27; }
+.client-profile-slot span { display: inline-flex; align-items: center; gap: 10px; }
+.client-profile-details { border-top: 1px solid #332e27; padding-top: 16px; }
+.client-profile-details p { margin-top: 12px; overflow-wrap: anywhere; }
