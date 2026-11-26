@@ -13,6 +13,8 @@ import AppointementsAdmin from "./pages/admin-appointments/Appointments.jsx";
 import ClientsAdmin from "./pages/admin-client/ClientAdmin.jsx";
 import ProfileAdmin from "./pages/admin-profile/ProfileAdmin.jsx"
 import Booking from "./pages/booking/Booking.jsx"
+import Profil from "./profile/Profil.jsx";
+import About from "./pages/about/About.jsx";
 
 function App() {
   return (
@@ -51,6 +53,16 @@ function App() {
             <Booking/>
           </ProtectedRoute>
         }/>
+        <Route path="/profile" element={
+          <ProtectedRoute allowedRoles={["client"]}>
+            <Profil />
+          </ProtectedRoute>
+        } />
+        <Route path="/nosotros" element={
+          <ProtectedRoute allowedRoles={["client"]}>
+            <About />
+          </ProtectedRoute>
+        } />
       </Routes>
       <ToastContainer
         position="top-right"

@@ -1,0 +1,30 @@
+.client-profile-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 40px;
+  background: linear-gradient(105deg, var(--profile-surface) 75%, #26221b);
+}
+
+.client-profile-avatar {
+  width: 112px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--profile-gold);
+  border-radius: 14px;
+  background: radial-gradient(at top, #483b23, #121211 75%);
+  color: var(--profile-gold);
+  font: 700 2.3rem Georgia, serif;
+}
+
+@media (max-width: 950px) {
+  .client-profile-header { grid-template-columns: auto minmax(0, 1fr); }
+  .client-profile-header .client-profile-actions { grid-column: 1 / -1; }
+}
+
+@media (max-width: 700px) {
+  .client-profile-avatar { width: 64px; font-size: 1.5rem; }
+  .client-profile-header { gap: 14px; padding: 20px; }
+}

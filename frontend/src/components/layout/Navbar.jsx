@@ -25,10 +25,10 @@ function NavBar() {
                 <NavLink to="/book-appointment">
                     Reserva Turno
                 </NavLink>
-                <NavLink to="/">
+                <NavLink to="/nosotros">
                     Nosotros
                 </NavLink>
-                <NavLink to="/">
+                <NavLink to="/profile">
                     Mi Perfil
                 </NavLink>
             </nav>
@@ -41,7 +41,7 @@ function NavBar() {
                 {
                     showMenu && (
                         <div className="dropdown-menu">
-                            <NavLink to="">
+                            <NavLink to="/profile">
                                 Mi Perfil
                             </NavLink>
                             <NavLink to="/home">

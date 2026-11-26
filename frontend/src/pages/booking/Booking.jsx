@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import BookingService from "../../components/booking/BookingService";
 import { getServices } from "../../services/serviceService";
 import { toast } from "react-toastify";
@@ -12,6 +13,8 @@ import { createAppointmets } from "../../services/appointments";
 import "./Booking.css";
 
 function Booking() {
+  const [searchParams] = useSearchParams();
+  const requestedService = searchParams.get("service");
   const [services, setServices] = useState([]);
   const [selectedService, setSelectedService] = useState(null);
 
@@ -26,7 +29,13 @@ function Booking() {
     async function loadServices() {
       try {
         const data = await getServices();
-        setServices(data.filter((service) => service.active !== false));
+        const availableServices = data.filter((service) => service.active !== false);
+        setServices(availableServices);
+        if (requestedService) {
+          const service = availableServices.find((item) => item._id === requestedService);
+          if (service) setSelectedService(service);
+          else toast.error("Ese servicio ya no está disponible", { toastId: "servicio-no-disponible" });
+        }
       } catch {
         toast.error("No se pudieron cargar los servicios", { toastId: "servicios" });
       }
@@ -41,7 +50,7 @@ function Booking() {
     }
     loadServices();
     loadBarber();
-  }, []);
+  }, [requestedService]);
   function handleSelectDate(date) {
     setSelectedDate(date);
     setSelectedTime("");
