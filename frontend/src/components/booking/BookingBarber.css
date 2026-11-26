@@ -19,39 +19,36 @@
   gap: 12px;
 }
 
-.booking-barber-card {
+.booking-barber-option {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-height: 150px;
-  padding: 18px 10px;
-  box-sizing: border-box;
-  background: var(--card-tarjeta);
-  border: 1px solid #39342a;
-  border-radius: 6px;
+  min-width: 0;
+  padding: 8px;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  color: var(--white);
+  font: inherit;
   cursor: pointer;
   transition: 0.25s ease;
 }
 
-.booking-barber-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-2px);
-}
-
-.booking-barber-card.selected {
-  border-color: var(--primary);
-  background: #25231d;
+.booking-barber-option:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
 }
 
 /* Barber image */
 
 .booking-barber-image {
-  width: 65px;
-  height: 65px;
-  border-radius: 10px;
+  width: clamp(68px, 9vw, 88px);
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
   overflow: hidden;
   border: 1px solid #39342a;
   background: var(--input);
@@ -62,10 +59,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: 50% 30%;
 }
 
-.booking-barber-card.selected .booking-barber-image {
+.booking-barber-option:hover .booking-barber-image,
+.booking-barber-option.selected .booking-barber-image {
   border-color: var(--primary);
 }
 
@@ -73,8 +71,8 @@
 
 .booking-barber-check {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  left: calc(50% + 19px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,25 +87,14 @@
 
 /* Barber information */
 
-.booking-barber-info {
+.booking-barber-name {
   text-align: center;
-  min-width: 0;
-}
-
-.booking-barber-info h3 {
-  margin: 0;
-  color: var(--white);
   font-size: 0.9rem;
   font-weight: 600;
   overflow-wrap: anywhere;
 }
-
-.booking-barber-info p {
-  margin: 7px 0 0;
+.booking-barber-option.selected .booking-barber-name {
   color: var(--primary);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 1px;
 }
 
 /* Tablet */
@@ -124,14 +111,5 @@
   .booking-barbers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
-  }
-
-  .booking-barber-card {
-    min-height: 140px;
-  }
-
-  .booking-barber-image {
-    width: 60px;
-    height: 60px;
   }
 }

@@ -113,6 +113,14 @@ body{
 
 .user-button span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+.navbar-avatar {
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .dropdown-menu{
     position: absolute;
 

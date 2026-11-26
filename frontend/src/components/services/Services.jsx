@@ -18,7 +18,7 @@ function Services() {
     loadServices();
   }, [])
   return (
-    <section className="services">
+    <section className="services" id="servicios">
       <div className="services-header">
         <div className="services-title">
           <h2>Nuestros servicios</h2>

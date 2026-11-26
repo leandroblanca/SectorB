@@ -16,6 +16,7 @@ import Booking from "./pages/booking/Booking.jsx"
 import Profil from "./profile/Profil.jsx";
 import About from "./pages/about/About.jsx";
 import Contact from "./pages/contact/Contact.jsx";
+import NotFound from "./pages/not-found/NotFound.jsx";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
           </ProtectedRoute>
         } />
         <Route path="/contacto" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer
         position="top-right"
